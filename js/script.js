@@ -128,12 +128,12 @@ document.addEventListener("DOMContentLoaded", () => {
       imcValueEl.textContent = imc.toFixed(1);
 
       let cat = "";
-      if (imc < 18.5) cat = "Abaixo do peso";
-      else if (imc < 25) cat = "Peso normal — parabéns!";
-      else if (imc < 30) cat = "Sobrepeso";
-      else if (imc < 35) cat = "Obesidade grau I";
-      else if (imc < 40) cat = "Obesidade grau II";
-      else cat = "Obesidade grau III";
+      if (imc < 18.5) cat = "Underweight";
+      else if (imc < 25) cat = "Normal weight — congratulations!";
+      else if (imc < 30) cat = "Overweight";
+      else if (imc < 35) cat = "Obesity grade I";
+      else if (imc < 40) cat = "Obesity grade II";
+      else cat = "Obesity grade III";
       imcCatEl.textContent = cat;
     });
   }
@@ -145,7 +145,7 @@ function handleContact(event) {
   const nome = document.getElementById("cnome").value.trim();
   const wpp = document.getElementById("cwpp").value.trim();
   const msg = document.getElementById("cmsg").value.trim();
-  const text = `Olá! Sou ${nome} (${wpp}). ${msg}`;
+  const text = `Hello! I am ${nome} (${wpp}). ${msg}`;
   const url = `https://wa.me/5511999999999?text=${encodeURIComponent(text)}`;
   window.open(url, "_blank");
   return false;
